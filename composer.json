@@ -1,0 +1,18 @@
+{
+    "name": "danielwinning/static-markdown-blog",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DanielWinning\\StaticMarkdownBlog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniel Winning",
+            "email": "daniel@winningwebdesign.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
