@@ -16,6 +16,6 @@
     "minimum-stability": "dev",
     "require": {
         "illuminate/support": "^9.0",
-        "league/commonmark": "2.4.x-dev"
+        "league/commonmark": "^2.3"
     }
 }
