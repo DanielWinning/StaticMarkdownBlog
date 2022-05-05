@@ -3,11 +3,12 @@
 namespace DanielWinning\StaticMarkdownBlog\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use DanielWinning\StaticMarkdownBlog\StaticMarkdownBlog;
 
 class StaticMarkdownBlogController extends Controller
 {
     public function index()
     {
-        return "Hello, blog!";
+        dd(StaticMarkdownBlog::getPosts());
     }
 }

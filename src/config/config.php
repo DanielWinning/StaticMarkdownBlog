@@ -16,5 +16,15 @@ return [
     /**
      * The URL prefix for your applications blog posts
      */
-    "postsUrl" => "/blog"
+    "postsUrl" => "/blog",
+
+    /**
+     * The blog posts
+     */
+    "posts" => [
+        [
+            "title" => "My Sample Blog Post",
+            "slug" => "sample-post"
+        ]
+    ]
 ];
