@@ -7,6 +7,7 @@ class StaticMarkdownBlog
     public static function getPosts(?int $limit = null): array
     {
         $rawPosts = config("static-markdown-blog.posts");
+
         $posts = [];
 
         foreach ($rawPosts as $post) {

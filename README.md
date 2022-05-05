@@ -32,8 +32,9 @@ like so:
 ```
 "posts" => [
     [
-        "title" => "My First Blog Post with Laravel & Static Markdown Blog",
-        "slug" => "my-first-blog-post-with-laravel-and-static-markdown-blog"
+        "title" => "My first blog post",
+        "slug" => "my-first-blog-post",
+        "published_at" => "2018-01-01"
     ]
 ]
 ```

@@ -26,5 +26,16 @@ return [
     /**
      * The blog posts
      */
-    "posts" => []
+    "posts" => [
+        [
+            "title" => "My first blog post",
+            "slug" => "my-first-blog-post",
+            "published_at" => "2018-01-01",
+        ]
+    ],
+
+    /**
+     * Format for date conversions
+     */
+    "dateFormat" => "jS F, Y"
 ];
