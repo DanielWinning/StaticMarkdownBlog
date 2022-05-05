@@ -5,7 +5,7 @@
                 {{ $post->title }}
             </h2>
             <span>
-                {{ $post->slug }}
+                {{ $post->published_at }}
             </span>
         </a>
     @endforeach
