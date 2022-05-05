@@ -15,6 +15,10 @@ class StaticMarkdownBlogController extends Controller
     {
         $posts = StaticMarkdownBlog::getPosts();
 
+        if (config("static-markdown-blog.indexSorts") && config("static-markdown-blog.sortBy") === "published_at") {
+            $posts = self::sortPostsByLatest($posts);
+        }
+
         return view("static-markdown-blog::posts.index", [
             "posts" => $posts
         ]);
@@ -39,5 +43,13 @@ class StaticMarkdownBlogController extends Controller
             }
             return view("static-markdown-blog::posts.show", ["post" => $post]);
         }
+    }
+
+    private static function sortPostsByLatest(array $posts): array
+    {
+        usort($posts, function ($a, $b) {
+            return strtotime($a->published_at) + strtotime($b->published_at);
+        });
+        return $posts;
     }
 }

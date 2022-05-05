@@ -29,9 +29,4 @@ class StaticMarkdownBlog
 
         return null;
     }
-
-    public static function postExists(string $slug): bool
-    {
-        return self::getPost($slug) !== null;
-    }
 }

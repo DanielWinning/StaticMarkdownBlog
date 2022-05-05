@@ -26,11 +26,29 @@ return [
             "title" => "My first blog post",
             "slug" => "my-first-blog-post",
             "published_at" => "2018-01-01",
-        ]
+        ],
+        [
+            "title" => "My second blog post",
+            "slug" => "my-second-blog-post",
+            "published_at" => "2021-01-02",
+        ],
+        [
+            "title" => "My first blog post",
+            "slug" => "my-first-blog-post",
+            "published_at" => "2018-01-04",
+        ],
     ],
 
     /**
      * Format for date conversions
      */
-    "dateFormat" => "jS F, Y"
+    "dateFormat" => "jS F, Y",
+
+    /**
+     * Sorting
+     */
+    "indexSorts" => true,
+    "sortBy" => "published_at",
+    "sortByIsDate" => true,
+    "sortOrder" => "desc"
 ];
