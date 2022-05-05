@@ -8,7 +8,6 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\Output\RenderedContentInterface;
 
 class StaticMarkdownBlogController extends Controller
 {
@@ -35,6 +34,8 @@ class StaticMarkdownBlogController extends Controller
                     "allow_unsafe_links" => false
                 ]);
                 $post->content = $converter->convert($post->content);
+            } else {
+                return abort(404);
             }
             return view("static-markdown-blog::posts.show", ["post" => $post]);
         }
