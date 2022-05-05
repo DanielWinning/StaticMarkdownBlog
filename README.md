@@ -41,4 +41,5 @@ like so:
 By default, the package will use `resources/posts` as the source of your posts. You can change this by publishing the
 config file and changing the `postsPath` value. The package will expect your posts to be in Markdown format.
 
-Your blog index will be served at `/blog` by default - posts will be served up at `/blog/{slug}` by default. You can change this by publishing the config file and
+Your blog index will be served at `/blog` by default - posts will be served up at `/blog/{slug}` by default. You can 
+change this by publishing the config file and updating the `postsUrl` value.
