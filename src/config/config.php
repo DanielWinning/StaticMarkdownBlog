@@ -26,10 +26,5 @@ return [
     /**
      * The blog posts
      */
-    "posts" => [
-        [
-            "title" => "My Sample Blog Post",
-            "slug" => "sample-post"
-        ]
-    ]
+    "posts" => []
 ];
