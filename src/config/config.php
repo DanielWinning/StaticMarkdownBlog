@@ -18,11 +18,6 @@ return [
      */
     "postsUrl" => "/blog",
 
-    /*
-     * Pagination
-     */
-    "paginateIndex" => 10,
-
     /**
      * The blog posts
      */
