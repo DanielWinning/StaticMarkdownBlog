@@ -15,6 +15,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "illuminate/support": "10.x-dev"
+        "illuminate/support": "^9.0"
     }
 }
