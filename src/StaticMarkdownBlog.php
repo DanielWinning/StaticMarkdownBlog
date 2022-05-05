@@ -18,11 +18,19 @@ class StaticMarkdownBlog
 
     public static function getPost(string $slug)
     {
+        $posts = self::getPosts();
 
+        foreach ($posts as $post) {
+            if ($post->slug === $slug) {
+                return $post;
+            }
+        }
+
+        return null;
     }
 
-    private static function postExists(string $slug)
+    public static function postExists(string $slug): bool
     {
-
+        return self::getPost($slug) !== null;
     }
 }

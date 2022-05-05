@@ -12,8 +12,10 @@ class StaticMarkdownBlogServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . "/config/config.php", "static-markdown-blog");
         $this->publishes([
             __DIR__ . "/config/config.php" => config_path("static-markdown-blog.php"),
+            __DIR__ . "/resources/views" => resource_path("views/vendor/static-markdown-blog")
         ]);
         $this->registerRoutes();
+        $this->loadViewsFrom(__DIR__ . "/resources/views", "static-markdown-blog");
     }
 
     public function register()
