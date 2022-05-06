@@ -58,7 +58,9 @@ To display posts on other pages outside of the blog index, simply get the posts 
 your controller or route definition use the `getPosts` method:
 
 ```
-return view("app.index", ["posts" => \DanielWinning\StaticMarkdownBlog\StaticMarkdownBlog::getPosts($limit)]);
+return view("app.index", [
+    "posts" => \DanielWinning\StaticMarkdownBlog\StaticMarkdownBlog::getPosts($limit)
+]);
 ```
 
 Then displaying them on the frontend is as simple as looping through the posts and displaying them:
