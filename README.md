@@ -54,11 +54,23 @@ change this by publishing the config file and updating the `postsUrl` value.
 
 ### Displaying Posts Elsewhere
 
-To display posts on other pages outside of the blog index, simply get the posts you want and pass them to a view. Inside 
+To display posts on other pages outside of the blog index, simply get the posts and pass them to a view. Inside 
 your controller or route definition use the `getPosts` method:
 
 ```
 return view("app.index", ["posts" => \DanielWinning\StaticMarkdownBlog\StaticMarkdownBlog::getPosts($limit)]);
 ```
 
-Then displaying them on the frontend
+Then displaying them on the frontend is as simple as looping through the posts and displaying them:
+```
+@foreach($posts as $post)
+<div class="post-preview" onclick="window.location.href='{{ config("markdown-static-blog.postsUrl") . "/" . $post->slug . ".md" }}'">
+    <h2 class="post-title">
+        {{ $post->title }}
+    </h2>
+    <span class="post-date">
+        {{ $post->published_at }}
+    </span>
+</div>
+@endforeach
+```
