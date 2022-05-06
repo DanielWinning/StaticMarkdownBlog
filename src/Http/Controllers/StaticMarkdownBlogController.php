@@ -13,14 +13,8 @@ class StaticMarkdownBlogController extends Controller
 {
     public function index(): Factory|View|Application
     {
-        $posts = StaticMarkdownBlog::getPosts();
-
-        if (config("static-markdown-blog.indexSorts") && config("static-markdown-blog.sortBy") === "published_at" && config("static-markdown-blog.sortOrder") === "desc") {
-            $posts = self::sortPostsByLatest($posts);
-        }
-
         return view("static-markdown-blog::posts.index", [
-            "posts" => $posts
+            "posts" => StaticMarkdownBlog::getPosts()
         ]);
     }
 
@@ -43,13 +37,5 @@ class StaticMarkdownBlogController extends Controller
             }
             return view("static-markdown-blog::posts.show", ["post" => $post]);
         }
-    }
-
-    private static function sortPostsByLatest(array $posts): array
-    {
-        usort($posts, function ($a, $b) {
-            return strtotime($a->published_at) + strtotime($b->published_at);
-        });
-        return $posts;
     }
 }

@@ -51,3 +51,14 @@ The only **required** fields are:
 
 Your blog index will be served at `/blog` by default - posts will be served up at `/blog/{slug}` by default. You can 
 change this by publishing the config file and updating the `postsUrl` value.
+
+### Displaying Posts Elsewhere
+
+To display posts on other pages outside of the blog index, simply get the posts you want and pass them to a view. Inside 
+your controller or route definition use the `getPosts` method:
+
+```
+return view("app.index", ["posts" => \DanielWinning\StaticMarkdownBlog\StaticMarkdownBlog::getPosts($limit)]);
+```
+
+Then displaying them on the frontend

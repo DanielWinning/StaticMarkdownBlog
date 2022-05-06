@@ -14,6 +14,10 @@ class StaticMarkdownBlog
             $posts[] = new StaticMarkdownBlogPost($post);
         }
 
+        if (config("static-markdown-blog.indexSorts") && config("static-markdown-blog.sortBy") === "published_at" && config("static-markdown-blog.sortOrder") === "desc") {
+            $posts = self::sortPostsByLatest($posts);
+        }
+
         return $posts;
     }
 
@@ -28,5 +32,13 @@ class StaticMarkdownBlog
         }
 
         return null;
+    }
+
+    private static function sortPostsByLatest(array $posts): array
+    {
+        usort($posts, function ($a, $b) {
+            return strtotime($a->published_at) + strtotime($b->published_at);
+        });
+        return $posts;
     }
 }
