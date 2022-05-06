@@ -65,7 +65,7 @@ Then displaying them on the frontend is as simple as looping through the posts a
 ```
 @foreach($posts as $post)
     <div class="post-preview" 
-         onclick="window.location.href='{{ config("markdown-static-blog.postsUrl") . "/" . $post->slug . ".md" }}'">
+         onclick="window.location.href='{{ $post->slug }}'">
         <h2 class="post-title">
             {{ $post->title }}
         </h2>

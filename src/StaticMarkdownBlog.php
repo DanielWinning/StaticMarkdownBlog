@@ -26,7 +26,9 @@ class StaticMarkdownBlog
         $posts = self::getPosts();
 
         foreach ($posts as $post) {
-            if ($post->slug === $slug) {
+            $explodedSlug = explode("/", $post->slug);
+            $searchingForSlug = end($explodedSlug);
+            if ($searchingForSlug === $slug) {
                 return $post;
             }
         }

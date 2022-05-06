@@ -25,8 +25,10 @@ class StaticMarkdownBlogController extends Controller
         if (is_null($post)) {
             return abort(404);
         } else {
-            if (file_exists(config("static-markdown-blog.postsPath") . "/" . $post->slug . ".md")) {
-                $post->content = file_get_contents(config("static-markdown-blog.postsPath") . "/" . $post->slug . ".md");
+            $explodedSlug = explode("/", $post->slug);
+            $searchForSlug = end($explodedSlug);
+            if (file_exists(config("static-markdown-blog.postsPath") . "/" . $searchForSlug . ".md")) {
+                $post->content = file_get_contents(config("static-markdown-blog.postsPath") . "/" . $searchForSlug . ".md");
                 $converter = new CommonMarkConverter([
                     "html_input" => "strip",
                     "allow_unsafe_links" => false
