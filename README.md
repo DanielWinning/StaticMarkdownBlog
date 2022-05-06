@@ -64,7 +64,8 @@ return view("app.index", ["posts" => \DanielWinning\StaticMarkdownBlog\StaticMar
 Then displaying them on the frontend is as simple as looping through the posts and displaying them:
 ```
 @foreach($posts as $post)
-<div class="post-preview" onclick="window.location.href='{{ config("markdown-static-blog.postsUrl") . "/" . $post->slug . ".md" }}'">
+<div class="post-preview" 
+     onclick="window.location.href='{{ config("markdown-static-blog.postsUrl") . "/" . $post->slug . ".md" }}'">
     <h2 class="post-title">
         {{ $post->title }}
     </h2>
