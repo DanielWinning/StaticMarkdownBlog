@@ -15,7 +15,7 @@ class StaticMarkdownBlogController extends Controller
     {
         $posts = StaticMarkdownBlog::getPosts();
 
-        if (config("static-markdown-blog.indexSorts") && config("static-markdown-blog.sortBy") === "published_at") {
+        if (config("static-markdown-blog.indexSorts") && config("static-markdown-blog.sortBy") === "published_at" && config("static-markdown-blog.sortOrder") === "desc") {
             $posts = self::sortPostsByLatest($posts);
         }
 
