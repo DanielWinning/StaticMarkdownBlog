@@ -37,7 +37,9 @@ class StaticMarkdownBlogController extends Controller
             } else {
                 return abort(404);
             }
-            return view("static-markdown-blog::posts.show", ["post" => $post]);
+            return view("static-markdown-blog::posts.show", [
+                "post" => $post
+            ]);
         }
     }
 }
