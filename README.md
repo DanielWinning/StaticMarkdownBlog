@@ -4,7 +4,7 @@
 
 Sometimes, you want a blog but don't necessarily want to create a CMS to manage your posts, or maybe you don't want to
 add the overhead of a database. This is where Static Markdown Blog comes in. Write your posts in Markdown, directly 
-inside your project, and they'll be served up as static HTML.
+inside your project, and they'll be served up as static HTML. Helps you to create a Markdown driven blog in minutes.
 
 ## Installation
 ```
@@ -26,8 +26,8 @@ php artisan vendor:publish --provider="DanielWinning\StaticMarkdownBlog\StaticMa
 
 ## Usage
 
-After publishing the package files, note the empty `posts` array. This is where you'll store a *reference* to your posts, 
-like so:
+After publishing the package files, you will have a new config file at `config/static-markdown-blog.php`. Inside this 
+config file, note the empty `posts` array. This is where you'll store a *reference* to your posts, like so:
 
 ```
 "posts" => [
