@@ -22,21 +22,7 @@ return [
      * The blog posts
      */
     "posts" => [
-        [
-            "title" => "My first blog post",
-            "slug" => "my-first-blog-post",
-            "published_at" => "2018-01-01",
-        ],
-        [
-            "title" => "My second blog post",
-            "slug" => "my-second-blog-post",
-            "published_at" => "2021-01-02",
-        ],
-        [
-            "title" => "My first blog post",
-            "slug" => "my-first-blog-post",
-            "published_at" => "2018-01-04",
-        ],
+        // Add references to your posts here
     ],
 
     /**
