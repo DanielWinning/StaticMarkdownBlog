@@ -1,6 +1,6 @@
 {
     "name": "danielwinning/static-markdown-blog",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "library",
     "license": "MIT",
     "autoload": {
