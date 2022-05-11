@@ -81,7 +81,7 @@ Then displaying them on the frontend is as simple as looping through the posts a
 
 ## Pagination
 
-As of version 1.1.0, the package now supports pagination, which is enabled by default. To use the pagination features in 
+As of version 1.1, the package now supports pagination, which is enabled by default. To use the pagination features in 
 your own views, you can create a new paginator and pass it to a view:
 
 ```
