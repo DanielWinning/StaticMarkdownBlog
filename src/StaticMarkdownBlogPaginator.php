@@ -15,6 +15,9 @@ class StaticMarkdownBlogPaginator
         $this->pages = $this->buildPages($options["perPage"] ?? 10);
         $this->pageCount = count($this->pages);
         $this->currentPage = $options["currentPage"] ?? 1;
+        if (!$this->pageCount) {
+            $this->currentPage = 0;
+        }
         $this->posts = $this->getPostsForPage($this->currentPage);
     }
 
