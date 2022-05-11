@@ -9,4 +9,8 @@
             </span>
         </a>
     @endforeach
+
+    @if(config("static-markdown-blog.indexPagination") && isset($paginator))
+        @include("static-markdown-blog::posts.paginator", ["paginator" => $paginator])
+    @endif
 </div>

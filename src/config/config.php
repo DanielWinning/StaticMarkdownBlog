@@ -80,6 +80,11 @@ return [
      */
     "indexSorts" => true,
     "sortBy" => "published_at",
-    "sortByIsDate" => true,
-    "sortOrder" => "desc"
+    "sortOrder" => "desc",
+
+    /**
+     * Pagination
+     */
+    "indexPagination" => true,
+    "paginationLimit" => 4
 ];

@@ -13,8 +13,18 @@ class StaticMarkdownBlogController extends Controller
 {
     public function index(): Factory|View|Application
     {
+        if (config("static-markdown-blog.indexPagination")) {
+            $paginator = StaticMarkdownBlog::getPaginatedPosts(config("static-markdown-blog.paginationLimit"));
+            return view("static-markdown-blog::posts.index", [
+                "posts" => $paginator->posts,
+                "paginator" => $paginator
+            ]);
+        }
+
+        $posts = StaticMarkdownBlog::getPosts();
+
         return view("static-markdown-blog::posts.index", [
-            "posts" => StaticMarkdownBlog::getPaginatedPosts(4)->posts
+            "posts" => $posts
         ]);
     }
 

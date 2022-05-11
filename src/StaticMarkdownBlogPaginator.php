@@ -6,8 +6,8 @@ class StaticMarkdownBlogPaginator
 {
     public array $posts;
     protected array $pages;
-    protected int $pageCount;
-    protected int $currentPage;
+    public int $pageCount;
+    public int $currentPage;
 
     public function __construct(array $posts, array $options = [])
     {
