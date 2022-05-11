@@ -46,4 +46,9 @@ class StaticMarkdownBlogPaginator
     {
         return $this->pages[$page - 1] ?? [];
     }
+
+    public function hasMorePages(): bool
+    {
+        return $this->pageCount > 1;
+    }
 }

@@ -78,3 +78,38 @@ Then displaying them on the frontend is as simple as looping through the posts a
     </div>
 @endforeach
 ```
+
+## Pagination
+
+As of version 1.1.0, the package now supports pagination, which is enabled by default. To use the pagination features in 
+your own views, you can create a new paginator and pass it to a view:
+
+```
+$paginator = \DanielWinning\StaticMarkdownBlog\StaticMarkdownBlog::getPaginatedPosts($limit);
+
+return view("app.index", [
+    "posts => $paginator->posts,
+    "paginator" => $paginator
+]);
+```
+
+In your view, you can then display the posts and the pagination links:
+```
+<div class="posts">
+    @foreach($posts as $post)
+        <div class="post-preview" 
+             onclick="window.location.href='{{ $post->slug }}'">
+            <h2 class="post-title">
+                {{ $post->title }}
+            </h2>
+            <span class="post-date">
+                {{ $post->published_at }}
+            </span>
+        </div>
+    @endforeach
+</div>
+
+@if(config("static-markdown-blog.indexPagination") && isset($paginator) && $paginator->hasMorePages())
+    @include("static-markdown-blog::posts.paginator", ["paginator" => $paginator])
+@endif
+```
