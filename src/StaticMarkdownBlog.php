@@ -21,7 +21,15 @@ class StaticMarkdownBlog
         return $posts;
     }
 
-    public static function getPost(string $slug)
+    public static function getPaginatedPosts(int $paginateBy = 10): StaticMarkdownBlogPaginator
+    {
+        return new StaticMarkdownBlogPaginator(self::getPosts(), [
+            "perPage" => $paginateBy,
+            "currentPage" => request()->has("page") ? request()->get("page") : 1
+        ]);
+    }
+
+    public static function getPost(string $slug): mixed
     {
         $posts = self::getPosts();
 

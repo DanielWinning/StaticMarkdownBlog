@@ -14,7 +14,7 @@ class StaticMarkdownBlogController extends Controller
     public function index(): Factory|View|Application
     {
         return view("static-markdown-blog::posts.index", [
-            "posts" => StaticMarkdownBlog::getPosts()
+            "posts" => StaticMarkdownBlog::getPaginatedPosts(4)->posts
         ]);
     }
 
