@@ -8,11 +8,13 @@ class StaticMarkdownBlogPaginator
     protected array $pages;
     public int $pageCount;
     public int $currentPage;
+    public int $perPage;
 
     public function __construct(array $posts, array $options = [])
     {
         $this->posts = $posts;
-        $this->pages = $this->buildPages($options["perPage"] ?? 10);
+        $this->perPage = $options["perPage"] ?? 10;
+        $this->pages = $this->buildPages($this->perPage);
         $this->pageCount = count($this->pages);
         $this->currentPage = $options["currentPage"] ?? 1;
         if (!$this->pageCount) {
