@@ -34,7 +34,7 @@ config file, note the empty `posts` array. This is where you'll store a *referen
     [
         "title" => "My first blog post",
         "slug" => "my-first-blog-post",
-        "published_at" => "2018-01-01"
+        "published_at" => "2022-01-01"
     ]
 ]
 ```
