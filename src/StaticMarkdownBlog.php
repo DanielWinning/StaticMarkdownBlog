@@ -46,6 +46,7 @@ class StaticMarkdownBlog
 
     private static function sortPostsByLatest(array $posts): array
     {
+        // This doesn't seem to work atm
         usort($posts, function ($a, $b) {
             return strtotime($a->published_at) + strtotime($b->published_at);
         });
