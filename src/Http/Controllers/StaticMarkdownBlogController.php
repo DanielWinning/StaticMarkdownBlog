@@ -8,6 +8,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use League\CommonMark\CommonMarkConverter;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class StaticMarkdownBlogController extends Controller
 {
@@ -21,14 +22,12 @@ class StaticMarkdownBlogController extends Controller
             ]);
         }
 
-        $posts = StaticMarkdownBlog::getPosts();
-
         return view("static-markdown-blog::posts.index", [
-            "posts" => $posts
+            "posts" => StaticMarkdownBlog::getPosts()
         ]);
     }
 
-    public function show(string $slug): View|Factory|Application
+    public function show(string $slug)
     {
         $post = StaticMarkdownBlog::getPost($slug);
 
